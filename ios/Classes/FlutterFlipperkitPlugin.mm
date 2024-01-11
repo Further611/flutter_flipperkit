@@ -8,41 +8,41 @@
 
 @implementation FlutterFlipperkitPlugin {
     FlutterEventSink _eventSink;
-    FlipperClient *flipperClient;
-    // Built-in Plugins
-    FlipperKitNetworkPlugin *flipperKitNetworkPlugin;
-    FKUserDefaultsPlugin *fKUserDefaultsPlugin;
-    // Custom plugins
-    FlipperDatabaseBrowserPlugin *flipperDatabaseBrowserPlugin;
-    FlipperReduxInspectorPlugin *flipperReduxInspectorPlugin;
+    // FlipperClient *flipperClient;
+    // // Built-in Plugins
+    // FlipperKitNetworkPlugin *flipperKitNetworkPlugin;
+    // FKUserDefaultsPlugin *fKUserDefaultsPlugin;
+    // // Custom plugins
+    // FlipperDatabaseBrowserPlugin *flipperDatabaseBrowserPlugin;
+    // FlipperReduxInspectorPlugin *flipperReduxInspectorPlugin;
 }
 
 - (instancetype)init
 {
     self = [super init];
     if (self) {
-        flipperClient = [FlipperClient sharedClient];
+        // flipperClient = [FlipperClient sharedClient];
       
-        flipperKitNetworkPlugin = [FlipperKitNetworkPlugin new];
-        fKUserDefaultsPlugin = [[FKUserDefaultsPlugin alloc] initWithSuiteName:nil];
+        // flipperKitNetworkPlugin = [FlipperKitNetworkPlugin new];
+        // fKUserDefaultsPlugin = [[FKUserDefaultsPlugin alloc] initWithSuiteName:nil];
         
-        flipperDatabaseBrowserPlugin = [FlipperDatabaseBrowserPlugin new];
-        flipperReduxInspectorPlugin = [FlipperReduxInspectorPlugin new];
+        // flipperDatabaseBrowserPlugin = [FlipperDatabaseBrowserPlugin new];
+        // flipperReduxInspectorPlugin = [FlipperReduxInspectorPlugin new];
     }
     return self;
 }
 
 + (void)registerWithRegistrar:(NSObject<FlutterPluginRegistrar>*)registrar {
-    FlutterMethodChannel* channel = [FlutterMethodChannel
-                                     methodChannelWithName:@"flutter_flipperkit"
-                                     binaryMessenger:[registrar messenger]];
-    FlutterFlipperkitPlugin* instance = [[FlutterFlipperkitPlugin alloc] init];
-    [registrar addMethodCallDelegate:instance channel:channel];
+    // FlutterMethodChannel* channel = [FlutterMethodChannel
+    //                                  methodChannelWithName:@"flutter_flipperkit"
+    //                                  binaryMessenger:[registrar messenger]];
+    // FlutterFlipperkitPlugin* instance = [[FlutterFlipperkitPlugin alloc] init];
+    // [registrar addMethodCallDelegate:instance channel:channel];
     
-    FlutterEventChannel* eventChannel =
-        [FlutterEventChannel eventChannelWithName:@"flutter_flipperkit/event_channel"
-                              binaryMessenger:[registrar messenger]];
-    [eventChannel setStreamHandler:instance];
+    // FlutterEventChannel* eventChannel =
+    //     [FlutterEventChannel eventChannelWithName:@"flutter_flipperkit/event_channel"
+    //                           binaryMessenger:[registrar messenger]];
+    // [eventChannel setStreamHandler:instance];
 }
 
 - (void)handleMethodCall:(FlutterMethodCall*)call result:(FlutterResult)result {
